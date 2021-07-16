@@ -290,7 +290,7 @@ func BenchmarkTokenizer(b *testing.B) {
 		function func(*testing.B, []byte)
 	}{
 		{
-			scenario: "github.com/segmentio/encoding/json",
+			scenario: "github.com/ProjectAthenaa/encoding/json",
 			function: func(b *testing.B, json []byte) {
 				t := NewTokenizer(nil)
 

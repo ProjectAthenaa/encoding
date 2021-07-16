@@ -6,7 +6,7 @@ import (
 	"sync"
 	"unsafe"
 
-	. "github.com/segmentio/encoding/internal/runtime_reflect"
+	. "github.com/ProjectAthenaa/encoding/internal/runtime_reflect"
 )
 
 const (

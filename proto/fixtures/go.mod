@@ -1,4 +1,4 @@
-module github.com/segmentio/encoding/proto/fixtures
+module github.com/ProjectAthenaa/encoding/proto/fixtures
 
 go 1.14
 

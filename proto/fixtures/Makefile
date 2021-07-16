@@ -1,6 +1,6 @@
 %.pb.go: %.proto
 	protoc -I=$(dir $@) --go_out=$(dir $@) $<
-	@mv $(dir $@)/github.com/segmentio/encoding/proto/fixtures/$@ $@
+	@mv $(dir $@)/github.com/ProjectAthenaa/encoding/proto/fixtures/$@ $@
 	@rm -rf $(dir $@)/github.com
 
 protobuf.sources := \

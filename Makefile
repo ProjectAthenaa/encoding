@@ -33,22 +33,22 @@ test-iso8601:
 $(benchstat):
 	GO111MODULE=off go get -u golang.org/x/perf/cmd/benchstat
 
-# This compares segmentio/encoding/json to the standard golang encoding/json;
+# This compares ProjectAthenaa/encoding/json to the standard golang encoding/json;
 # for more in-depth benchmarks, see the `benchmarks` directory.
 count ?= 5
 bench-simple: $(benchstat)
 	@go test -v -run '^$$' -bench '(Marshal|Unmarshal)$$/codeResponse' -benchmem -cpu 1 -count $(count) ./json -package encoding/json | tee /tmp/encoding-json.txt
-	@go test -v -run '^$$' -bench '(Marshal|Unmarshal)$$/codeResponse' -benchmem -cpu 1 -count $(count) ./json | tee /tmp/segmentio-encoding-json.txt
-	benchstat /tmp/encoding-json.txt /tmp/segmentio-encoding-json.txt
+	@go test -v -run '^$$' -bench '(Marshal|Unmarshal)$$/codeResponse' -benchmem -cpu 1 -count $(count) ./json | tee /tmp/ProjectAthenaa-encoding-json.txt
+	benchstat /tmp/encoding-json.txt /tmp/ProjectAthenaa-encoding-json.txt
 
 bench-master: $(benchstat)
 	git stash
 	git checkout master
-	@go test -v -run '^$$' -bench /codeResponse -benchmem -benchtime 3s -cpu 1 ./json -count 8 | tee /tmp/segmentio-encoding-json-master.txt
+	@go test -v -run '^$$' -bench /codeResponse -benchmem -benchtime 3s -cpu 1 ./json -count 8 | tee /tmp/ProjectAthenaa-encoding-json-master.txt
 	git checkout -
 	git stash pop
-	@go test -v -run '^$$' -bench /codeResponse -benchmem -benchtime 3s -cpu 1 ./json -count 8 | tee /tmp/segmentio-encoding-json.txt
-	benchstat /tmp/segmentio-encoding-json-master.txt /tmp/segmentio-encoding-json.txt
+	@go test -v -run '^$$' -bench /codeResponse -benchmem -benchtime 3s -cpu 1 ./json -count 8 | tee /tmp/ProjectAthenaa-encoding-json.txt
+	benchstat /tmp/ProjectAthenaa-encoding-json-master.txt /tmp/ProjectAthenaa-encoding-json.txt
 
 update-golang-test: $(golang.test.files)
 	@echo "updated golang tests to $(golang.version)"

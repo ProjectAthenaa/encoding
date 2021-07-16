@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/segmentio/encoding/json"
+	"github.com/ProjectAthenaa/encoding/json"
 )
 
 func TestIssue18(t *testing.T) {

@@ -4,7 +4,7 @@ benchmark.count ?= 8
 
 benchmark.encoding.json := $(benchmark.dir)/encoding-json
 benchmark.github.com.json-iterator.go := $(benchmark.dir)/json-iterator
-benchmark.github.com.segmentio.encoding.json := $(benchmark.dir)/segment-encoding-json
+benchmark.github.com.ProjectAthenaa.encoding.json := $(benchmark.dir)/segment-encoding-json
 benchmark.github.com.mailru.easyjson := $(benchmark.dir)/easyjson
 benchmark.github.com.protobuf.v1 := $(benchmark.dir)/segment-protobuf-v1
 benchmark.vmihailenco.msgpack := $(benchmark.dir)/vmihailenco-msgpack
@@ -12,7 +12,7 @@ benchmark.tinylib.msgp := $(benchmark.dir)/tinylib-msgp
 
 benchmark.encoding.json.gzip := $(benchmark.dir)/encoding-json+gzip
 benchmark.github.com.json-iterator.go.gzip := $(benchmark.dir)/json-iterator+gzip
-benchmark.github.com.segmentio.encoding.json.gzip := $(benchmark.dir)/segment-encoding-json+gzip
+benchmark.github.com.ProjectAthenaa.encoding.json.gzip := $(benchmark.dir)/segment-encoding-json+gzip
 benchmark.github.com.mailru.easyjson.gzip := $(benchmark.dir)/easyjson+gzip
 benchmark.github.com.protobuf.v1.gzip := $(benchmark.dir)/segment-protobuf-v1+gzip
 benchmark.vmihailenco.msgpack.gzip := $(benchmark.dir)/vmihailenco-msgpack+gzip
@@ -20,7 +20,7 @@ benchmark.tinylib.msgp.gzip := $(benchmark.dir)/tinylib-msgp+gzip
 
 benchmark.encoding.json.snappy := $(benchmark.dir)/encoding-json+snappy
 benchmark.github.com.json-iterator.go.snappy := $(benchmark.dir)/json-iterator+snappy
-benchmark.github.com.segmentio.encoding.json.snappy := $(benchmark.dir)/segment-encoding-json+snappy
+benchmark.github.com.ProjectAthenaa.encoding.json.snappy := $(benchmark.dir)/segment-encoding-json+snappy
 benchmark.github.com.mailru.easyjson.snappy := $(benchmark.dir)/easyjson+snappy
 benchmark.github.com.protobuf.v1.snappy := $(benchmark.dir)/segment-protobuf-v1+snappy
 benchmark.vmihailenco.msgpack.snappy := $(benchmark.dir)/vmihailenco-msgpack+snappy
@@ -28,7 +28,7 @@ benchmark.tinylib.msgp.snappy := $(benchmark.dir)/tinylib-msgp+snappy
 
 benchmark.encoding.json.zstd := $(benchmark.dir)/encoding-json+zstd
 benchmark.github.com.json-iterator.go.zstd := $(benchmark.dir)/json-iterator+zstd
-benchmark.github.com.segmentio.encoding.json.zstd := $(benchmark.dir)/segment-encoding-json+zstd
+benchmark.github.com.ProjectAthenaa.encoding.json.zstd := $(benchmark.dir)/segment-encoding-json+zstd
 benchmark.github.com.mailru.easyjson.zstd := $(benchmark.dir)/easyjson+zstd
 benchmark.github.com.protobuf.v1.zstd := $(benchmark.dir)/segment-protobuf-v1+zstd
 benchmark.vmihailenco.msgpack.zstd := $(benchmark.dir)/vmihailenco-msgpack+zstd
@@ -42,28 +42,28 @@ benchmark.src := $(wildcard ./$(benchmark.cmd.dir)/*.go)
 benchmark.out := \
 	$(benchmark.encoding.json).txt \
 	$(benchmark.github.com.json-iterator.go).txt \
-	$(benchmark.github.com.segmentio.encoding.json).txt \
+	$(benchmark.github.com.ProjectAthenaa.encoding.json).txt \
 	$(benchmark.github.com.mailru.easyjson).txt \
 	$(benchmark.github.com.protobuf.v1).txt \
 	$(benchmark.vmihailenco.msgpack).txt \
 	$(benchmark.tinylib.msgp).txt \
 	$(benchmark.encoding.json.gzip).txt \
 	$(benchmark.github.com.json-iterator.go.gzip).txt \
-	$(benchmark.github.com.segmentio.encoding.json.gzip).txt \
+	$(benchmark.github.com.ProjectAthenaa.encoding.json.gzip).txt \
 	$(benchmark.github.com.mailru.easyjson.gzip).txt \
 	$(benchmark.github.com.protobuf.v1.gzip).txt \
 	$(benchmark.vmihailenco.msgpack.gzip).txt \
 	$(benchmark.tinylib.msgp.gzip).txt \
 	$(benchmark.encoding.json.snappy).txt \
 	$(benchmark.github.com.json-iterator.go.snappy).txt \
-	$(benchmark.github.com.segmentio.encoding.json.snappy).txt \
+	$(benchmark.github.com.ProjectAthenaa.encoding.json.snappy).txt \
 	$(benchmark.github.com.mailru.easyjson.snappy).txt \
 	$(benchmark.github.com.protobuf.v1.snappy).txt \
 	$(benchmark.vmihailenco.msgpack.snappy).txt \
 	$(benchmark.tinylib.msgp.snappy).txt \
 	$(benchmark.encoding.json.zstd).txt \
 	$(benchmark.github.com.json-iterator.go.zstd).txt \
-	$(benchmark.github.com.segmentio.encoding.json.zstd).txt \
+	$(benchmark.github.com.ProjectAthenaa.encoding.json.zstd).txt \
 	$(benchmark.github.com.mailru.easyjson.zstd).txt \
 	$(benchmark.github.com.protobuf.v1.zstd).txt \
 	$(benchmark.vmihailenco.msgpack.zstd).txt \
@@ -113,10 +113,10 @@ $(benchmark.github.com.json-iterator.go).txt: $(benchmark.msgs) $(benchmark.bin)
 		1> $(benchmark.github.com.json-iterator.go).txt \
 		2> $(benchmark.github.com.json-iterator.go).log
 
-$(benchmark.github.com.segmentio.encoding.json).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/encoding/json \
-		1> $(benchmark.github.com.segmentio.encoding.json).txt \
-		2> $(benchmark.github.com.segmentio.encoding.json).log
+$(benchmark.github.com.ProjectAthenaa.encoding.json).txt: $(benchmark.msgs) $(benchmark.bin)
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/encoding/json \
+		1> $(benchmark.github.com.ProjectAthenaa.encoding.json).txt \
+		2> $(benchmark.github.com.ProjectAthenaa.encoding.json).log
 
 $(benchmark.github.com.mailru.easyjson).txt: $(benchmark.msgs) $(benchmark.bin)
 	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/mailru/easyjson \
@@ -124,7 +124,7 @@ $(benchmark.github.com.mailru.easyjson).txt: $(benchmark.msgs) $(benchmark.bin)
 		2> $(benchmark.github.com.mailru.easyjson).log
 
 $(benchmark.github.com.protobuf.v1).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/protobuf/v1 \
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/protobuf/v1 \
 		1> $(benchmark.github.com.protobuf.v1).txt \
 		2> $(benchmark.github.com.protobuf.v1).log
 
@@ -148,10 +148,10 @@ $(benchmark.github.com.json-iterator.go.gzip).txt: $(benchmark.msgs) $(benchmark
 		1> $(benchmark.github.com.json-iterator.go.gzip).txt \
 		2> $(benchmark.github.com.json-iterator.go.gzip).log
 
-$(benchmark.github.com.segmentio.encoding.json.gzip).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/encoding/json -compression gzip \
-		1> $(benchmark.github.com.segmentio.encoding.json.gzip).txt \
-		2> $(benchmark.github.com.segmentio.encoding.json.gzip).log
+$(benchmark.github.com.ProjectAthenaa.encoding.json.gzip).txt: $(benchmark.msgs) $(benchmark.bin)
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/encoding/json -compression gzip \
+		1> $(benchmark.github.com.ProjectAthenaa.encoding.json.gzip).txt \
+		2> $(benchmark.github.com.ProjectAthenaa.encoding.json.gzip).log
 
 $(benchmark.github.com.mailru.easyjson.gzip).txt: $(benchmark.msgs) $(benchmark.bin)
 	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/mailru/easyjson -compression gzip \
@@ -159,7 +159,7 @@ $(benchmark.github.com.mailru.easyjson.gzip).txt: $(benchmark.msgs) $(benchmark.
 		2> $(benchmark.github.com.mailru.easyjson.gzip).log
 
 $(benchmark.github.com.protobuf.v1.gzip).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/protobuf/v1 -compression gzip \
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/protobuf/v1 -compression gzip \
 		1> $(benchmark.github.com.protobuf.v1.gzip).txt \
 		2> $(benchmark.github.com.protobuf.v1.gzip).log
 
@@ -183,10 +183,10 @@ $(benchmark.github.com.json-iterator.go.snappy).txt: $(benchmark.msgs) $(benchma
 		1> $(benchmark.github.com.json-iterator.go.snappy).txt \
 		2> $(benchmark.github.com.json-iterator.go.snappy).log
 
-$(benchmark.github.com.segmentio.encoding.json.snappy).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/encoding/json -compression snappy \
-		1> $(benchmark.github.com.segmentio.encoding.json.snappy).txt \
-		2> $(benchmark.github.com.segmentio.encoding.json.snappy).log
+$(benchmark.github.com.ProjectAthenaa.encoding.json.snappy).txt: $(benchmark.msgs) $(benchmark.bin)
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/encoding/json -compression snappy \
+		1> $(benchmark.github.com.ProjectAthenaa.encoding.json.snappy).txt \
+		2> $(benchmark.github.com.ProjectAthenaa.encoding.json.snappy).log
 
 $(benchmark.github.com.mailru.easyjson.snappy).txt: $(benchmark.msgs) $(benchmark.bin)
 	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/mailru/easyjson -compression snappy \
@@ -194,7 +194,7 @@ $(benchmark.github.com.mailru.easyjson.snappy).txt: $(benchmark.msgs) $(benchmar
 		2> $(benchmark.github.com.mailru.easyjson.snappy).log
 
 $(benchmark.github.com.protobuf.v1.snappy).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/protobuf/v1 -compression snappy \
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/protobuf/v1 -compression snappy \
 		1> $(benchmark.github.com.protobuf.v1.snappy).txt \
 		2> $(benchmark.github.com.protobuf.v1.snappy).log
 
@@ -218,10 +218,10 @@ $(benchmark.github.com.json-iterator.go.zstd).txt: $(benchmark.msgs) $(benchmark
 		1> $(benchmark.github.com.json-iterator.go.zstd).txt \
 		2> $(benchmark.github.com.json-iterator.go.zstd).log
 
-$(benchmark.github.com.segmentio.encoding.json.zstd).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/encoding/json -compression zstd \
-		1> $(benchmark.github.com.segmentio.encoding.json.zstd).txt \
-		2> $(benchmark.github.com.segmentio.encoding.json.zstd).log
+$(benchmark.github.com.ProjectAthenaa.encoding.json.zstd).txt: $(benchmark.msgs) $(benchmark.bin)
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/encoding/json -compression zstd \
+		1> $(benchmark.github.com.ProjectAthenaa.encoding.json.zstd).txt \
+		2> $(benchmark.github.com.ProjectAthenaa.encoding.json.zstd).log
 
 $(benchmark.github.com.mailru.easyjson.zstd).txt: $(benchmark.msgs) $(benchmark.bin)
 	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/mailru/easyjson -compression zstd \
@@ -229,7 +229,7 @@ $(benchmark.github.com.mailru.easyjson.zstd).txt: $(benchmark.msgs) $(benchmark.
 		2> $(benchmark.github.com.mailru.easyjson.zstd).log
 
 $(benchmark.github.com.protobuf.v1.zstd).txt: $(benchmark.msgs) $(benchmark.bin)
-	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/segmentio/protobuf/v1 -compression zstd \
+	cat $(benchmark.msgs) | $(benchmark.bin) -count $(benchmark.count) -batch $(benchmark.batch) -package github.com/ProjectAthenaa/protobuf/v1 -compression zstd \
 		1> $(benchmark.github.com.protobuf.v1.zstd).txt \
 		2> $(benchmark.github.com.protobuf.v1.zstd).log
 

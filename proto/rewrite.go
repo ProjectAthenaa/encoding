@@ -3,7 +3,7 @@ package proto
 import (
 	"fmt"
 
-	"github.com/segmentio/encoding/json"
+	"github.com/ProjectAthenaa/encoding/json"
 )
 
 // Rewriter is an interface implemented by types that support rewriting protobuf

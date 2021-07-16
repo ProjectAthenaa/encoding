@@ -12,7 +12,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/segmentio/encoding/iso8601"
+	"github.com/ProjectAthenaa/encoding/iso8601"
 )
 
 func (d decoder) decodeNull(b []byte, p unsafe.Pointer) ([]byte, error) {

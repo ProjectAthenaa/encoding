@@ -5,7 +5,7 @@ import (
 	"log"
 	"testing"
 
-	"github.com/segmentio/encoding/json"
+	"github.com/ProjectAthenaa/encoding/json"
 )
 
 func TestIssue11(t *testing.T) {

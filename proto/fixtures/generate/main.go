@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/segmentio/encoding/proto/fixtures"
+	"github.com/ProjectAthenaa/encoding/proto/fixtures"
 )
 
 func main() {

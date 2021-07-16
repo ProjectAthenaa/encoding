@@ -10,7 +10,7 @@ import (
 	"unicode/utf16"
 	"unicode/utf8"
 
-	"github.com/segmentio/encoding/ascii"
+	"github.com/ProjectAthenaa/encoding/ascii"
 )
 
 // All spaces characters defined in the json specification.

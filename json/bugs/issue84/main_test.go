@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/segmentio/encoding/json"
+	"github.com/ProjectAthenaa/encoding/json"
 )
 
 type Foo struct {

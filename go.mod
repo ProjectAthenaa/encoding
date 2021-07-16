@@ -1,4 +1,4 @@
-module github.com/segmentio/encoding
+module github.com/ProjectAthenaa/encoding
 
 go 1.14
 

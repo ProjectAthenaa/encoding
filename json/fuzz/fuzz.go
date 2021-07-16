@@ -12,7 +12,7 @@ import (
 	"reflect"
 
 	"github.com/dvyukov/go-fuzz-corpus/fuzz"
-	"github.com/segmentio/encoding/json"
+	"github.com/ProjectAthenaa/encoding/json"
 )
 
 func fixS(v interface{}) {
@@ -46,21 +46,21 @@ func Fuzz(data []byte) int {
 				if reflect.TypeOf(err1) != reflect.TypeOf(err2) {
 					fmt.Printf("input: %s\n", string(data))
 					fmt.Printf("encoding/json.Unmarshal(%T): %T: %s\n", v1, err1, err1)
-					fmt.Printf("segmentio/encoding/json.Unmarshal(%T): %T: %s\n", v2, err2, err2)
+					fmt.Printf("ProjectAthenaa/encoding/json.Unmarshal(%T): %T: %s\n", v2, err2, err2)
 					panic("error types mismatch")
 				}
 				continue
 			} else {
 				fmt.Printf("input: %s\n", string(data))
 				fmt.Printf("encoding/json.Unmarshal(%T): %T: %s\n", v1, err1, err1)
-				fmt.Printf("segmentio/encoding/json.Unmarshal(%T): <nil>\n")
+				fmt.Printf("ProjectAthenaa/encoding/json.Unmarshal(%T): <nil>\n")
 				panic("error values mismatch")
 			}
 		} else {
 			if err2 != nil {
 				fmt.Printf("input: %s\n", string(data))
 				fmt.Printf("encoding/json.Unmarshal(%T): <nil>\n")
-				fmt.Printf("segmentio/encoding/json.Unmarshal(%T): %T: %s\n", v2, err2, err2)
+				fmt.Printf("ProjectAthenaa/encoding/json.Unmarshal(%T): %T: %s\n", v2, err2, err2)
 				panic("error values mismatch")
 			} else {
 				// both implementations pass
@@ -73,7 +73,7 @@ func Fuzz(data []byte) int {
 		if !fuzz.DeepEqual(v1, v2) {
 			fmt.Printf("input: %s\n", string(data))
 			fmt.Printf("encoding/json:      %#v\n", v1)
-			fmt.Printf("segmentio/encoding: %#v\n", v2)
+			fmt.Printf("ProjectAthenaa/encoding: %#v\n", v2)
 			panic("not equal")
 		}
 
@@ -88,7 +88,7 @@ func Fuzz(data []byte) int {
 		if !bytes.Equal(data1, data2) {
 			fmt.Printf("input: %s\n", string(data))
 			fmt.Printf("encoding/json:      %s\n", string(data1))
-			fmt.Printf("segmentio/encoding: %s\n", string(data2))
+			fmt.Printf("ProjectAthenaa/encoding: %s\n", string(data2))
 			panic("not equal")
 		}
 	}

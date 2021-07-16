@@ -1,4 +1,4 @@
-# encoding [![Circle CI](https://circleci.com/gh/segmentio/encoding.svg?style=shield&circle-token=9bc6038a8e264684efe602003bb52c26835fc400)](https://circleci.com/gh/segmentio/encoding) [![Go Report Card](https://goreportcard.com/badge/github.com/segmentio/encoding)](https://goreportcard.com/report/github.com/segmentio/encoding) [![GoDoc](https://godoc.org/github.com/segmentio/encoding?status.svg)](https://godoc.org/github.com/segmentio/encoding)
+# encoding [![Circle CI](https://circleci.com/gh/ProjectAthenaa/encoding.svg?style=shield&circle-token=9bc6038a8e264684efe602003bb52c26835fc400)](https://circleci.com/gh/ProjectAthenaa/encoding) [![Go Report Card](https://goreportcard.com/badge/github.com/ProjectAthenaa/encoding)](https://goreportcard.com/report/github.com/ProjectAthenaa/encoding) [![GoDoc](https://godoc.org/github.com/ProjectAthenaa/encoding?status.svg)](https://godoc.org/github.com/ProjectAthenaa/encoding)
 
 Go package containing implementations of encoders and decoders for various data
 formats.
@@ -33,7 +33,7 @@ Additionally, we have fuzz tests which aren't a runtime required dependency but
 will be pulled in when running `go mod tidy`.  Please don't include these go.mod
 updates in change requests.
 
-## encoding/json [![GoDoc](https://godoc.org/github.com/segmentio/encoding/json?status.svg)](https://godoc.org/github.com/segmentio/encoding/json)
+## encoding/json [![GoDoc](https://godoc.org/github.com/ProjectAthenaa/encoding/json?status.svg)](https://godoc.org/github.com/ProjectAthenaa/encoding/json)
 
 More details about the implementation of this package can be found [here](json/README.md).
 
@@ -53,7 +53,7 @@ import (
 to
 ```go
 import (
-    "github.com/segmentio/encoding/json"
+    "github.com/ProjectAthenaa/encoding/json"
 )
 ```
 
@@ -106,7 +106,7 @@ Although this package aims to be a drop-in replacement of [`encoding/json`](http
 it does not guarantee the same error messages. It will error in the same cases
 as the standard library, but the exact error message may be different.
 
-## encoding/iso8601 [![GoDoc](https://godoc.org/github.com/segmentio/encoding/iso8601?status.svg)](https://godoc.org/github.com/segmentio/encoding/iso8601)
+## encoding/iso8601 [![GoDoc](https://godoc.org/github.com/ProjectAthenaa/encoding/iso8601?status.svg)](https://godoc.org/github.com/ProjectAthenaa/encoding/iso8601)
 
 The `iso8601` sub-package exposes APIs to efficiently deal with with string
 representations of iso8601 dates.
